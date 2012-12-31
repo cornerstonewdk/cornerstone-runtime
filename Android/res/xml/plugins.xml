@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+-->
+<plugins>
+    <plugin name="Geolocation" value="org.skt.runtime.original.GeoBroker"/>
+    <plugin name="Device" value="org.skt.runtime.original.Device"/>
+    <plugin name="Compass" value="org.skt.runtime.original.CompassListener"/>
+    <plugin name="Camera" value="org.skt.runtime.original.CameraLauncher"/>
+    <plugin name="Notification" value="org.skt.runtime.original.Notification"/>
+    <plugin name="Storage" value="org.skt.runtime.original.Storage"/>
+    <plugin name="Temperature" value="org.skt.runtime.original.TempListener"/>
+    <plugin name="SplashScreen" value="org.skt.runtime.original.SplashScreen"/>
+    
+    <!-- [20120613][chisu]add Accelerometer -->
+    <plugin name="Accelerometer" value="org.skt.runtime.html5apis.Accelerometer"/>
+    <!-- [20120613][chisu]add Orientation -->
+    <plugin name="Orientation" value="org.skt.runtime.html5apis.Orientation"/>
+    <!-- [20120613][chisu]add Vibrate -->
+    <plugin name="Vibrate" value="org.skt.runtime.html5apis.Vibrate"/>
+    <!-- [20120618][chisu]add Battery -->
+    <plugin name="Battery" value="org.skt.runtime.html5apis.Battery"/>
+    <!-- [20120618][chisu]add Messaging -->
+    <plugin name="Messaging" value="org.skt.runtime.html5apis.Messaging"/>
+    <!-- [20120618][chisu]add Connection -->
+    <plugin name="NetworkStatus" value="org.skt.runtime.html5apis.NetworkManager"/>
+    <!-- [20120622][chisu]add Contacts -->
+    <plugin name="Contacts" value="org.skt.runtime.html5apis.contacts.ContactManager"/>
+     <!-- [20120625][chisu]add Calendar -->
+    <plugin name="Calendar" value="org.skt.runtime.html5apis.calendar.CalendarManager"/>
+    <!-- [20120625][chisu]add DeviceSensor -->
+    <plugin name="TemperatureSensor" value="org.skt.runtime.html5apis.devicesensor.TemperatureSensor"/>
+    <plugin name="PressureSensor" value="org.skt.runtime.html5apis.devicesensor.PressureSensor"/>
+    <plugin name="HumiditySensor" value="org.skt.runtime.html5apis.devicesensor.HumiditySensor"/>
+    <plugin name="LightSensor" value="org.skt.runtime.html5apis.devicesensor.LightSensor"/>
+    <plugin name="ProximitySensor" value="org.skt.runtime.html5apis.devicesensor.ProximitySensor"/>
+    <!-- [20120709][chisu]add File -->
+    <plugin name="File" value="org.skt.runtime.html5apis.file.FileUtils"/> 
+    <plugin name="FileTransfer" value="org.skt.runtime.html5apis.file.FileTransfer"/>
+    <!-- [20120710][chisu]add WebWorker -->
+    <plugin name="Worker" value="org.skt.runtime.html5apis.webworker.WebWorker"/>
+    <!-- [20120719][chisu]add Capture -->
+    <plugin name="Capture" value="org.skt.runtime.additionalapis.Capture"/>
+    <!-- [20120814][chisu]add DeviceStatus -->
+    <plugin name="DeviceStatus" value="org.skt.runtime.additionalapis.DeviceStatus"/>
+    <!-- [20120820][chisu]add DeviceInteraction -->
+    <plugin name="DeviceInteraction" value="org.skt.runtime.additionalapis.DeviceInteraction"/>
+    <!-- [20120821][chisu]add ScreenShot -->
+    <plugin name="ScreenShot" value="org.skt.runtime.additionalapis.ScreenShot"/>
+     <!-- [20120821][chisu]add Audio -->
+    <plugin name="Media" value="org.skt.runtime.additionalapis.AudioHandler"/>
+    <!-- [20120821][chisu]add Audio -->
+    <plugin name="AppLauncher" value="org.skt.runtime.additionalapis.AppLauncher"/>
+     <!-- [20120823][chisu]add Child Browser -->
+    <plugin name="App" value="org.skt.runtime.additionalapis.App"/>
+    <plugin name="ChildBrowser" value="org.skt.runtime.additionalapis.ChildBrowser"/>
+    <!-- [20120827][chisu]add LocalNotification -->
+    <plugin name="LocalNotification" value="org.skt.runtime.additionalapis.LocalNotification"/>
+    <!-- [20120903][chisu]add preference -->
+    <plugin name="Preferences" value="org.skt.runtime.additionalapis.Preferences"/>
+    <!-- [20121118][chisu]add nfc -->
+    <plugin name="Nfc" value="org.skt.runtime.additionalapis.NfcPlugin"/>
+    <!-- [20121203][chisu]add menuManager -->
+    <plugin name="MenuManager" value="org.skt.runtime.additionalapis.MenuManager"/>
+    
+    <!-- [20120625][chisu]to test plugin -->
+    <plugin name="Background" value="co.kr.skr.plugin.BackgroundPlugin" />
+    <plugin name="PageLoading" value="co.kr.skr.plugin.PagetLoadingPlugin" />
+    <plugin name="MacAddress" value="co.kr.skr.plugin.MacAddressPlugin" />
+    <plugin name="SMSReceiver" value="co.kr.skr.plugin.SmsReceivePlugin" />
+    <plugin name="CallLog" value="co.kr.skr.plugin.CallLogPlugin" />
+</plugins>
