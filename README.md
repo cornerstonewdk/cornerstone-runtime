@@ -2,9 +2,34 @@
 
 ----------
 
-## 1.1 Android Runtime 기본 구조 
+## 1.1 공통 Runtime 기본구조 
+
+-	Cornerstone Runtime은 크게 platform 별 Native Layer와 Java Script Layer의 2가지의 layer로 나뉘어 진다. 
+
+-	Native layer는 각 플랫폼 별 Webview를 포함하여 사용한다. 
+
+-	Native layer는 각 플랫폼 별 사용되는 언어로 개발되어 있으며 JavaScript layer에서 요청된 DeviceAPI 를 플랫폼 SDK를 이용하여 처리된다.  
+
+<br> 
+
+### 1.1.1 Runtime JavaScript layer 
+
+-	Java Script layer는 웹앱에서 사용하기 위한 JavaScript API들을 선언 및 정의 하며 이를 Runtime의 native layer와 연결하는 역할을 한다.
+
+-	**SRT-x.x.js** 형태로 배포 되며 Runtime이 업데이트 될때마다 버전명이 올라간다. 
+		> **2012.12.28** 기준 **SRT-0.9.js** 배포 
+
+-	**SRT-x.x.js** 는 크게 두가지 역할로 구분된다. 
+
+	-	DeviceAPIs : 웹앱에서 사용하는 JavaScript API ProtoType 정의 
+	-	exec module: JavaScript APIs 를 Native Runtime Library와 연결하여 통신하는 공통 인터페이스 모듈 
+		-	js prompt()함수를 native 단에서 재정의 하여 JavaScript와 native의 연결 통로가 된다. 
+
 <br>
-### 1.1.1 Android Native Layer 
+
+## 1.2 Android Runtime 기본 구조 
+<br>
+### 1.2.1 Android Native Layer 
 
 -	Android Webview를 이용하여 Runtime JavaScript Library에서 호출된 API를 그에 해당하는 Native Class를 실행하고 성공/실패 콜백 전달하는 모듈
 
@@ -18,7 +43,7 @@
 
 <br>
 
-### 1.1.2 Android Project Files 
+### 1.2.2 Android Project Files 
 
 -	Android용 webapp을 개발하기 위해서는 아래 와 같은 project file 들을 세팅하여야 한다. 
 
@@ -36,9 +61,9 @@
 
 ----------
 
-## 1.2 IOS Runtime 기본 구조 
+## 1.3 IOS Runtime 기본 구조 
 
-### 1.2.1 IOS Native Layer
+### 1.3.1 IOS Native Layer
 
 - UIWebview를 이용하여 Runtime JS Library에서 불리는 API를 그에 해당하는 Native Class를 실행하고 성공/실패 콜백 전달 모듈
 
@@ -51,7 +76,7 @@
 
 <br>
 
-### 1.2.2 IOS Project Files
+### 1.3.2 IOS Project Files
 
 -	iOS용 webapp을 개발하기 위해서는 아래 와 같은 project file 들을 세팅하여야 한다. 
 
