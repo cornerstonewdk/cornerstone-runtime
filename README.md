@@ -1,3 +1,7 @@
+### COPYRIGHT(C) 2012 BY SKTELECOM CO., LTD. ALL RIGHTS RESERVED ###
+
+----------
+
 ## 1.1 Android Runtime 기본 구조 
 <br>
 ### 1.1.1 Android Native Layer 

@@ -1,3 +1,7 @@
+### COPYRIGHT(C) 2012 BY SKTELECOM CO., LTD. ALL RIGHTS RESERVED ###
+
+----------
+
 ### 1 iOS Runtime 웹앱 개발 환경 구조  
 
 1) SRT.framework - Cornerstone Runtime Library

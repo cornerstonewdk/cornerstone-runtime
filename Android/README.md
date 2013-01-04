@@ -1,3 +1,7 @@
+### COPYRIGHT(C) 2012 BY SKTELECOM CO., LTD. ALL RIGHTS RESERVED ###
+
+----------
+
 ### 1 Android Runtime 웹앱 개발 환경 구조 
 
 1) src - plugin 개발시에 작성하는 Java Native Code
