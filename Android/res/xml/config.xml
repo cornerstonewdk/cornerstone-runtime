@@ -40,6 +40,14 @@
     
     <!-- <preference name="splashscreen" value="splashskt"/> -->
     
+    <preference name="loadingprogressbar" value="navigator"/>  
+ 	<!-- <preference name="loadingprogressbar" value="dialog"/> -->  
+ 	<!-- <preference name="loadingprogressbar" value="none"/> --> 
+ 
+ 
+ 	<preference name="menu" value="true"/>
+ 	<!-- <preference name="menu" value="false"/> -->
+ 	
 </sktruntime>
 
 

@@ -6673,11 +6673,19 @@ sktdefine("srt/plugin/menumanager", function(sktrequire, exports, module) {
 			addMenu: function(action, menuCallback) {
 				// successCallback required
 				if (typeof menuCallback !== "function" ) {
-					throw "menuCallback must be called with at least a success callback function as second parameter.";
+					if(action == "OPENBROWSER" || action == "REFRESH" || action == "EXITAPP"){
+						//noaction
+					}
+					else 
+						throw "menuCallback must be called with at least a success callback function as second parameter.";
 				}  
 				// successCallback required
 				else if (menuCallback === null ) {
-					throw "menuCallback must be called with at least a success callback function as second parameter.";
+					if(action == "OPENBROWSER" || action == "REFRESH" || action == "EXITAPP"){
+						//noaction
+					}
+					else
+						throw "menuCallback must be called with at least a success callback function as second parameter.";						
 				} 
 				
 				else if(action != null && typeof action != "string"){
@@ -6796,18 +6804,20 @@ sktdefine("srt/plugin/nfc", function(sktrequire, exports, module) {
 				exec(null, null, "Nfc", "setNFCUse", [use]);
 			},
 			
-			transceive: function(successCallback, errorCallback, data) {
-				// successCallback required
-				if (typeof successCallback !== "function" ) {
-					throw "transceive must be called with at least a success callback function as first parameter.";
-				}  
-				// successCallback required
-				else if (successCallback === null ) {
-					throw "transceive must be called with at least a success callback function as first parameter.";
-				} 
+			transceive: function(successCallback,errorCallback,writedata) {
 
-				exec(successCallback, errorCallback, "Nfc", "transceive", [data]);
+				exec(successCallback, errorCallback, "Nfc", "transceive", [writedata]);
 			},
+			
+			tagclose: function() {
+
+				exec(null,null , "Nfc", "tagclose", []);
+			},
+			
+//			setTransceiveMessage: function(writedata) {
+//
+//				exec(null, null, "Nfc", "setTransceiveMessage", [writedata]);
+//			},
 			
 			setReadTagCallback: function(successCallback) {
 				// successCallback required
