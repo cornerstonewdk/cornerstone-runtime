@@ -18,7 +18,8 @@
        under the License.
 -->
 <resources>
-  <string name="app_name">TestWebAPP</string>
+  <string name="app_name">Cornerstone</string>
+  <!-- <string name="app_name"> È¸ÀÇ·Ï</string> -->
   <string name="loading_video">Loading video</string>
   <string name="go">Snap</string>
 </resources>

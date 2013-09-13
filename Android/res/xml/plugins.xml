@@ -73,10 +73,14 @@
     <plugin name="LocalNotification" value="org.skt.runtime.additionalapis.LocalNotification"/>
     <!-- [20120903][chisu]add preference -->
     <plugin name="Preferences" value="org.skt.runtime.additionalapis.Preferences"/>
+    <!-- [20130515][chisu]add push -->
+    <plugin name="Push" value="org.skt.runtime.push.CornerstonePush"/>
     <!-- [20121118][chisu]add nfc -->
     <plugin name="Nfc" value="org.skt.runtime.additionalapis.NfcPlugin"/>
     <!-- [20121203][chisu]add menuManager -->
     <plugin name="MenuManager" value="org.skt.runtime.additionalapis.MenuManager"/>
+    <!-- [20130523][chisu]add bluetooth -->
+    <plugin name="Bluetooth" value="org.skt.runtime.additionalapis.Bluetooth"/>
     
     <!-- [20120625][chisu]to test plugin -->
     <plugin name="Background" value="co.kr.skr.plugin.BackgroundPlugin" />

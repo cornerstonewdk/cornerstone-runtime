@@ -1,7 +1,25 @@
-/*!
- * Cornerstion JavaScript Library v0.9
- * COPYRIGHT(C) 2012 BY SKTELECOM CO., LTD. ALL RIGHTS RESERVED. 
- */
+// commit ac0a3990438f4a89faa993316fb5614f61cf3be6
+
+// File generated at :: Tue Jun 05 2012 14:14:16 GMT-0700 (PDT)
+
+/*
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+*/
 
 ;(function() {
 
@@ -690,6 +708,10 @@ module.exports = {
                 applauncher: {
                     path: 'srt/plugin/applauncher'
                 },
+                //[20130523][chisu]bluetooth
+                bluetooth: {
+                    path: 'srt/plugin/bluetooth'
+                },
                 //[20120613][chisu]add orientation
                 orientation: {
                 	path: 'srt/plugin/orientation'
@@ -769,6 +791,10 @@ module.exports = {
                 preferences:{
                 	path: 'srt/plugin/preferences'
                 },
+                //[20120515][chisu]add push
+                push:{
+                	path: 'srt/plugin/push'
+                },
                 splashscreen: {
                     path: 'srt/plugin/splashscreen'
                 }, 
@@ -779,6 +805,14 @@ module.exports = {
                 //[20120613][chisu]add vibrate
                 vibrate:{
                 	path: 'srt/plugin/vibrate'
+                },
+                //[20130623][chisu]getCurrentURL
+                getCurrentURL:{
+                    path: 'srt/plugin/getCurrentURL'
+                },
+                //[20130730][chisu]intent
+                startActivity: {
+                    path: 'srt/plugin/startActivity'
                 }
             }
         },
@@ -851,6 +885,10 @@ module.exports = {
         ContactFindOptions: {
             path: 'srt/plugin/ContactFindOptions'
         },
+        //[20130730][chisu]pick contact
+        ContactIntentExtras: {
+            path: 'srt/plugin/ContactIntentExtras'
+        },
         ContactName: {
             path: 'srt/plugin/ContactName'
         },
@@ -906,6 +944,10 @@ module.exports = {
         Flags: {
             path: 'srt/plugin/Flags'
         },
+        //[20130730][chisu]intent
+        Intent: {
+            path: 'srt/plugin/Intent'
+        },
         LocalFileSystem: {
             path: 'srt/plugin/LocalFileSystem'
         },
@@ -932,11 +974,11 @@ module.exports = {
         Message:{
         	path:'srt/plugin/Message'
         },
-      //[20120619][chisu]MessageError;
+        //[20120619][chisu]MessageError;
         MessagingError:{
         	path:'srt/plugin/MessagingError'
         },
-       //[20120619][chisu]Nfc
+         //[20120619][chisu]Nfc
         Nfc:{
         	path: 'srt/plugin/Nfc'
         },
@@ -1913,6 +1955,26 @@ module.exports = ConfigurationData;
 //};
 //});
 
+//file: lib/common/plugin/Intent.js
+sktdefine("srt/plugin/Intent", function(sktrequire, exports, module) {
+/**
+* Intent
+* @constructor
+* @param {DOMString} action
+* @param {DOMString} type
+* @param {ContactIntentExtras } extras
+*/
+var Intent = function(properties) {
+	if(properties != undefined){
+		this.action = properties.action || null;
+		this.type = properties.type || null;
+		this.extras = properties.extras || null; 		
+	}
+};
+
+module.exports = Intent;
+});
+
 // file: lib/common/plugin/Contact.js
 sktdefine("srt/plugin/Contact", function(sktrequire, exports, module) {
 var exec = sktrequire('srt/exec'),
@@ -2186,6 +2248,26 @@ var ContactFindOptions = function(filter, multiple) {
 };
 
 module.exports = ContactFindOptions;
+});
+
+//[20130730][chisu]pick contact intent
+//file: lib/common/plugin/ContactIntentExtras.js
+sktdefine("srt/plugin/ContactIntentExtras", function(sktrequire, exports, module) {
+/**
+ * ContactIntentExtras.
+ * @constructor
+ * @param String    search
+ * @param long      limit
+ * @param Stringp[] fields
+ */
+
+var ContactIntentExtras = function(search, limit , fields) {
+    this.search = search || '';
+    this.limit = limit || 0;
+    this.fields = fields || null;
+};
+
+module.exports = ContactIntentExtras;
 });
 
 // file: lib/common/plugin/ContactName.js
@@ -6729,8 +6811,14 @@ sktdefine("srt/plugin/screenshot", function(sktrequire, exports, module) {
 		 *
 		 * @param {Function} successCallback The function to call when the screen is caputred
 		 * @param {Function} errorCallback The function to call when there is an error capturing screen
+		 * @param {String} filename 
+		 * @param {Boolean} usenativecrop 
+		 * @param {int} x 
+		 * @param {int} y 
+		 * @param {int} width 
+		 * @param {int} height 
 		 */
-		captureScreenshot: function(successCallback, errorCallback, filename) {
+		captureScreenshot: function(successCallback, errorCallback, filename , usenativecrop , x , y , width , height) {
 				// successCallback required
 				if (typeof successCallback !== "function" ) {
 					throw "captureScreenshot must be called with at least a success callback function as first parameter.";
@@ -6744,12 +6832,98 @@ sktdefine("srt/plugin/screenshot", function(sktrequire, exports, module) {
 					throw "3rd argument must be string Type.";
 				}
 
-				exec(successCallback, errorCallback, "ScreenShot", "captureScreenshot", [filename]);
+				exec(successCallback, errorCallback, "ScreenShot", "captureScreenshot", [filename, usenativecrop , x, y , width , height]);
 			}
 	};
 
 	module.exports = screenshot;
 
+});
+
+//[20130523][chisu]add bluetooth
+//file: lib/common/plugin/bluetooth.js
+sktdefine("srt/plugin/bluetooth", function(sktrequire, exports, module) {
+
+	var utils = sktrequire("srt/utils"),
+	exec = sktrequire("srt/exec");
+
+
+	var bluetooth = {
+
+			scanDevice: function(successCallback, errorCallback) {
+				exec(successCallback, errorCallback, "Bluetooth", "scanDevice", []);
+				// successCallback required
+				if (typeof successCallback !== "function" ) {
+					throw "scanDevice must be called with at least a success callback function as first parameter.";
+				}  
+				// successCallback required
+				else if (successCallback === null ) {
+					throw "scanDevice must be called with at least a success callback function as first parameter.";
+				} 
+			},
+			stopScanDevice: function(successCallback, errorCallback) {
+				exec(null, null, "Bluetooth", "stopScanDevice", []);
+			},
+			setDeviceDiscoverable: function(successCallback, errorCallback) {
+				exec(null, null, "Bluetooth", "setDeviceDiscoverable", []);
+			},
+			connectDevice: function(successCallback, errorCallback,deviceName) {
+				exec(null, null, "Bluetooth", "connectDevice", [deviceName]);
+			},
+			disConnectDevice: function(successCallback, errorCallback,deviceName) {
+				exec(null, null, "Bluetooth", "disConnectDevice", [deviceName]);
+			},
+			makeServerSocket: function(successCallback, errorCallback,deviceName) {
+				exec(null, null, "Bluetooth", "makeServerSocket", []);
+			}
+	};
+
+	module.exports = bluetooth;
+
+});
+
+//[20130515][chisu]add push
+//file: lib/common/plugin/push.js
+sktdefine("srt/plugin/push", function(sktrequire, exports, module) {
+
+	var utils = sktrequire("srt/utils"),
+	exec = sktrequire("srt/exec");
+
+
+	var push = {
+
+			requestRemotePermission: function(appToken, publickey, algorithm) {
+				exec(null, null, "Push", "requestRemotePermission", [appToken]);
+			},
+			unrequestRemotePermission: function() {
+				exec(null, null, "Push", "unrequestRemotePermission", []);
+			},
+			getregistrationID: function(successCallback,errorCallback) {
+				exec(successCallback, errorCallback, "Push", "getregistrationID", []);
+			},
+			enableService: function(successCallback,errorCallback,use) {
+				exec(successCallback, errorCallback, "Push", "usePushService", [use]);
+			},
+			setDisplayType: function(successCallback,errorCallback,type) {
+				exec(successCallback, errorCallback, "Push", "setPushType", [type]);
+			}
+			
+	};
+
+	module.exports = push;
+
+});
+
+//file: lib/common/plugin/getCurrentURL.js
+sktdefine("srt/plugin/getCurrentURL", function(sktrequire, exports, module) {
+var exec = sktrequire('srt/exec');
+
+var getCurrentURL = function() {
+     var url = exec(null, null, "Push", "getCurrentURL", []);
+     return url;
+};
+
+module.exports = getCurrentURL;
 });
 
 //[20121118][chisu]add NFC Type
@@ -6950,6 +7124,35 @@ sktdefine("srt/plugin/deviceinteraction", function(sktrequire, exports, module) 
 			 */
 			stopRingtone: function(){
 				return exec(null, null, "DeviceInteraction", "stopRingtone", []);
+			},
+			/**
+			 * [20130823][chisu]hydration update
+			 * hydration update
+			 */
+			hydrationupdate: function(successCallback, errorCallback){
+				// successCallback required
+				if (typeof successCallback !== "function" ) {
+					throw "hydrationupdate must be called with at least a success callback function as first parameter.";
+				}  
+				// successCallback required
+				else if (successCallback === null ) {
+					throw "hydrationupdate must be called with at least a success callback function as first parameter.";
+				} 
+				return exec(successCallback, errorCallback, "DeviceInteraction", "hydrationupdate", []);
+			},
+			getPackageName: function(successCallback, errorCallback){
+				// successCallback required
+				if (typeof successCallback !== "function" ) {
+					throw "hydrationupdate must be called with at least a success callback function as first parameter.";
+				}  
+				// successCallback required
+				else if (successCallback === null ) {
+					throw "hydrationupdate must be called with at least a success callback function as first parameter.";
+				} 
+				return exec(successCallback, errorCallback, "DeviceInteraction", "getPackageName", []);
+			},
+			clearHistory: function(){
+				return exec(null, null, "DeviceInteraction", "clearHistory", []);
 			}
 	};
 
@@ -7225,6 +7428,46 @@ var vibrate = function(time) {
 module.exports = vibrate;
 
 });
+
+//[20130730][chisu]startActivity
+//file: lib/common/plugin/startActivity.js
+sktdefine("srt/plugin/startActivity", function(sktrequire, exports, module) {
+var exec = sktrequire('srt/exec'),
+    Contact = sktrequire('srt/plugin/Contact');
+
+function createContactObj(properties){
+    var i;
+    var contact = new Contact();
+    for (i in properties) {
+        if (typeof contact[i] !== 'undefined' && properties.hasOwnProperty(i)) {
+            contact[i] = properties[i];
+        }
+    }
+    return contact;
+}
+
+var startActivity = function(intent, successCallback, errorCallback) {
+	
+	if(intent.action == "http://webintents.org/pick" && intent.type == "http://w3.org/type/contact"){
+		if (!successCallback) {
+			throw new TypeError("You must specify a success callback for the find command.");
+		}
+
+		var win = function(result) {
+			var cs = [];
+			for (var i = 0, l = result.length; i < l; i++) {
+				cs.push(createContactObj(result[i]));
+			}
+			successCallback(cs);
+		};
+		
+		exec(win, errorCallback, "Contacts", "pickcontact", [intent.extras]);
+	}
+};
+
+module.exports = startActivity;
+});
+
 
 // file: lib/common/plugin/requestFileSystem.js
 sktdefine("srt/plugin/requestFileSystem", function(sktrequire, exports, module) {

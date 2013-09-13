@@ -17,9 +17,10 @@
        specific language governing permissions and limitations
        under the License.
 -->
+
+<!-- [ConerStone Runtime]input your packeage name -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:windowSoftInputMode="adjustPan"
-     package="co.kr.skt.testapp.testtcs" android:versionName="1.1" android:versionCode="5"> 
-       <!-- package="co.kr.skt.testapp.meeting" android:versionName="1.1" android:versionCode="5">-->
+ 		package="co.kr.skt.cornerstone.yourappname" android:versionName="1.1" android:versionCode="5"> 
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -45,6 +46,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />   
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -68,19 +70,37 @@
 
     <application android:icon="@drawable/icon" android:label="@string/app_name"
         android:debuggable="true" android:hardwareAccelerated="true">
-        <activity android:name="org.skt.runtime.RuntimeStandAlone" android:windowSoftInputMode="adjustResize"
-                  android:label="@string/app_name" android:configChanges="orientation|keyboardHidden">
+        <activity android:name=".RuntimeStandAlone" android:windowSoftInputMode="adjustResize"
+                  android:label="@string/app_name" android:configChanges="orientation|keyboardHidden"
+                  android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:mimeType="audio/*" />
+                <data android:mimeType="text/*" />
+                <data android:mimeType="application/*" />
+                <data android:mimeType="plain/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="skt.cornerstone.runtime.push" ></action>
+                <category android:name="android.intent.category.DEFAULT" ></category>
+            </intent-filter>
+
         </activity>
+        
          <activity
             android:name="org.skt.runtime.ChildActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize" >
         </activity>
+        
         <activity android:name="org.skt.runtime.RuntimeActivity" android:label="@string/app_name" 
                   android:configChanges="orientation|keyboardHidden">
             <!-- 
@@ -100,7 +120,64 @@
             </intent-filter>
         </receiver>
 
+        <!-- CustomURL activity for receive uri broadcast from browser -->
+        <activity android:name="org.skt.runtime.UriReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="testapp.co.kr"
+                    android:scheme="http" />
+                <data
+                    android:host="testapp.co.kr"
+                    android:scheme="cornerstone" />
+            </intent-filter>
+        </activity>
+
+        <!-- to use GCM -->
+         <activity android:name="org.skt.runtime.push.PushNotification"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.AlertDialogs" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- [ConerStone Runtime]input your packeage name -->
+                <category android:name="co.kr.skt.cornerstone.yourappname" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".GCMIntentService" />
+        
     </application>
 
-    <uses-sdk android:minSdkVersion="2" />
+     <!-- to use GCM -->
+     <!-- [ConerStone Runtime]input your packeage name -->
+    <permission
+        android:name="co.kr.skt.cornerstone.yourappname.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- [ConerStone Runtime]input your packeage name -->
+    <uses-permission android:name="co.kr.skt.cornerstone.yourappname.permission.C2D_MESSAGE" />
+
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <uses-sdk android:minSdkVersion="12" />
+    
 </manifest> 

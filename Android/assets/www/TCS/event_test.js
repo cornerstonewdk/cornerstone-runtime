@@ -1,12 +1,15 @@
 document.addEventListener("deviceready", onDeviceReady_EV, false);
 
 function onPause_EV(){
-	ok(true,"onPause 정상적으로 작동");
+	ok(true,"onPause 정상적으로 작동.");
 	start();
 }
-
 function onResume_EV(){
 	ok(true,"onResume 정상적으로 작동");
+	start();
+}
+function onBackbutton_EV(){
+	ok(true,"backbutton override 정상적으로 작동");
 	start();
 }
 function onOnline_EV(){
@@ -40,11 +43,25 @@ function onDeviceReady_EV(){
 		document.addEventListener("resume", onResume_EV, false);
 	});
 
-	// test 4 
-	asyncTest("eve_004:removeEvent - event가 remove 되는지 확인", function() {
+	if(device.platform == "Android"){
+		// test 4 
+		asyncTest("eve_004:backbutton-물리 backbutton활성화 되었을때를 확인", function() {
+			document.addEventListener("backbutton", onBackbutton_EV, false);
+			alert("alert창은 닫고 backbutton을 클릭하세요.\n이전 화면으로 돌아간다면 실패 , 테스트가 진행되면 성공.");
+		});
+	}
+	else{
+		test("eve_004:backbutton-물리 backbutton활성화 되었을때를 확인",function(){
+			ok(true,"iOS는 본테스트 생략.");
+		});
+	}
+
+	// test 5 
+	asyncTest("eve_005:removeEvent - event가 remove 되는지 확인", function() {
 		//remove event 
 		document.removeEventListener("pause",onPause_EV, false);
 		document.removeEventListener("resume",onResume_EV, false);
+		document.removeEventListener("backbutton", onBackbutton_EV, false);
 		ok(true,"removeEvent 정상적으로 작동");
 		start();
 	});
