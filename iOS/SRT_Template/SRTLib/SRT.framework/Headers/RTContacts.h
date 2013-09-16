@@ -79,6 +79,19 @@
  *
  */
 - (void) search:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+
+/*
+ * pickcontact - pickcontact for contacts.  Only person records are currently supported.
+ *
+ * arguments:
+ *  1: successcallback - this is the javascript function that will be called with the array of found contacts
+ *  2:  errorCallback - optional javascript functiont to be called in the event of an error with an error code.
+ * options:  dictionary containing ContactFields and ContactFindOptions
+ *	fields - ContactFields array
+ *  findOptions - ContactFindOptions object as dictionary
+ *
+ */
+- (void) pickcontact:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 /* 
  * save - saves a new contact or updates and existing contact
  *

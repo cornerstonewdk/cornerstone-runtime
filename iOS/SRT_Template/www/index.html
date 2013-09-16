@@ -4,12 +4,189 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 	context="width-divice-width, initial-scele-1.0, user-scalble=no">
-<script type="text/javascript" charset="utf-8" src="SRT-0.9.1.js"></script>
+<script type="text/javascript" charset="utf-8" src="SRT-0.9.2.js"></script>
 <title>Capture API</title>
 <script type="text/javascript">
+    
+    var rootURL = null;
+    
+    function requestFileSystemtest() {
+        function onFileSystemSuccess(fileSystem) {
+            rootURL = fileSystem.root.toURL();
+        }
+        
+        function fail(error) {
+            console.log(error.code);
+        }
+        
+        //test 1
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+                                 onFileSystemSuccess, fail);
+    }
 
+    
+	function CaptureImage() {
+
+		// capture callback
+
+        alert(rootURL);
+		function captureSuccess(filename) {
+			// do something with resulting error
+			alert("Captured Image path:" + filename);
+			var imgDest = document.getElementById("captureimg");
+			imgDest.setAttribute("src", filename + "?" + new Date().getTime());
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			alert(err.code);
+		}
+		;
+
+		// start Image capture
+        navigator.capture.captureImage(captureSuccess, captureError,
+                                       { destinationFilename : rootURL + "/capturedImage.jpg",
+                                       highRes : true });
+
+		//navigator.capture.captureImage(captureSuccess, captureError);
+	}
+
+	function CaptureVideo() {
+		// capture callback
+		function captureSuccess(filename) {
+			// do something with resulting error
+			alert("Captured video path:" + filename);
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			alert(err.code);
+		}
+		;
+
+		// start Image capture
+		navigator.capture.captureVideo(captureSuccess, captureError, {
+			destinationFilename : rootURL + "/capturedVideo",
+			highRes : true
+		});
+
+		//navigator.capture.captureVideo(captureSuccess, captureError);
+	}
+
+	function CaptureAudio() {
+		// capture callback
+		function captureSuccess(filename) {
+			// do something with resulting error
+			alert("Captured video path:" + filename);
+		}
+
+		// capture error callback
+		function captureError(err) {
+			// do something with resulting error
+			alert(err.code);
+		}
+		;
+
+		// start Image capture
+		navigator.capture.captureAudio(captureSuccess, captureError, {
+			destinationFilename : rootURL + "/capturedAudio.wav",
+			highRes : true
+		});
+
+		//navigator.capture.captureVideo(captureSuccess, captureError);
+	}
+    function chisutest(){
+        //alert(location.href);
+        //alert(navigator.connection.type);
+        navigator.bluetooth.scanDevice();
+    }
+    function messageSend(){
+        //alert(location.href);
+        //alert(navigator.connection.type);
+        navigator.bluetooth.sendData();
+    }
+    
+    function sc(token){
+        alert(token);
+    }
+    function ec(){
+        alert("error");
+    }
+    function getDeviceToken(){
+        navigator.push.getRegistrationID(sc,ec);
+    }
+    
+    function preference_setItem(){
+        navigator.preferences.setItem("test","teststring");
+    }
+    
+    function preference_getItem(){
+        function sc(value){alert(value);};
+        navigator.preferences.getItem(sc,null,"test");
+    }
+    
+    function pickcontact(){
+		
+		var intent = new Intent({ action:   "http://webintents.org/pick",
+                                type:     "http://w3.org/type/contact",
+                                extras:   {
+                                fields: ["displayName", "emails" ,"phoneNumbers"]
+                                ,limit : 2
+                                ,search : "010"
+                                }});
+		
+		//var intent = new Intent();
+		//intent.action = "http://webintents.org/pick";
+		//intent.type  = "http://w3.org/type/contact";
+		//intent.extras = { fields: ["displayName", "emails"] };
+		
+        //navigator.contacts.chooseContact(contactsOK,contactsFail);
+		navigator.startActivity(intent, contactsOK, contactsFail);
+        
+		function contactsOK (contacts) {
+		    // iterate over the array of contacts to do something useful with them
+			alert(contacts.length
+                  + ' contacts returned.'
+                  + (contacts[0] && contacts[0].displayName ? (' first contact is ' + contacts[0].displayName) : ''));
+            
+			alert("contact phonnumber is " + contacts[0].phoneNumbers[0].value);
+		}
+		function contactsFail (err) {
+		    // display an error to the user
+		}
+	}
+    
 </script>
 </head>
-test page
+<hr>
+Capture API Test
+<BR>
+<a href="http://www.slrclub.com">back</a>
+<hr>
+<a href="cornerstone:01176666049">SMS Me</a>
+<button onclick="requestFileSystemtest();">requestFileSystemtest</button>
+<hr>
+<button onclick="CaptureImage();">CaptureImage</button>
+<br>
+<button onclick="CaptureVideo();">CaptureVideo</button>
+<br>
+<button onclick="CaptureAudio();">CaptureAudio</button>
+<br>
+<button onclick="chisutest();">findBTDevice</button>
+<br>
+<button onclick="messageSend();">messageSend</button>
+<br>
+<button onclick="getDeviceToken();">getDeviceToken</button>
+<br>
+<button onclick="pickcontact();">pickContact</button>
+<br>
+<button onclick="preference_setItem();">preference_setItem</button>
+<br>
+<button onclick="preference_getItem();">preference_getItem</button>
+<br>
+
+<img id="captureimg" witdh="200px" height="200px"></img>
 </body>
 </html>

@@ -16,7 +16,6 @@
 		0927F98A1654B62900D6B759 /* status6.png in Resources */ = {isa = PBXBuildFile; fileRef = 0927F9821654B62900D6B759 /* status6.png */; };
 		0927F98B1654B62900D6B759 /* status7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0927F9831654B62900D6B759 /* status7.png */; };
 		0927F98C1654B62900D6B759 /* status8.png in Resources */ = {isa = PBXBuildFile; fileRef = 0927F9841654B62900D6B759 /* status8.png */; };
-		0927F9941654D48300D6B759 /* SRT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0927F9931654D48300D6B759 /* SRT.framework */; };
 		0927F9AB1654D52C00D6B759 /* LevelDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0927F99E1654D52C00D6B759 /* LevelDB.mm */; };
 		0927F9AC1654D52C00D6B759 /* libleveldb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0927F99F1654D52C00D6B759 /* libleveldb.a */; };
 		0927F9AD1654D52C00D6B759 /* RTIndexedDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0927F9A21654D52C00D6B759 /* RTIndexedDB.mm */; };
@@ -47,12 +46,16 @@
 		09874DE315F5981100AFC6D8 /* Splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09874DD815F5981100AFC6D8 /* Splash@2x.png */; };
 		09874DE615F5984B00AFC6D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09874DE415F5984B00AFC6D8 /* InfoPlist.strings */; };
 		09874DEA15F5988500AFC6D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09874DE815F5988500AFC6D8 /* InfoPlist.strings */; };
+		09BCE75817CD9B210024D1EC /* SRT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F3FB4D17C76A5000DC8CCB /* SRT.framework */; };
 		09C5D4D616104FA70017C7B3 /* RTPageLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D4D416104FA70017C7B3 /* RTPageLoading.m */; };
 		09C5D619162400890017C7B3 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D616162400890017C7B3 /* icon-72.png */; };
 		09C5D61A162400890017C7B3 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D617162400890017C7B3 /* icon.png */; };
 		09C5D61B162400890017C7B3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D618162400890017C7B3 /* icon@2x.png */; };
 		09C5D61D162402B60017C7B3 /* SRT.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D61C162402B60017C7B3 /* SRT.plist */; };
 		09C5FF8815E5E68D005B5AC1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C5FF8715E5E68D005B5AC1 /* CoreTelephony.framework */; };
+		09CF74E0175C497500FE79B3 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09CF74DD175C340B00FE79B3 /* GameKit.framework */; };
+		09F3F99617C7550600DC8CCB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F3F99517C7550600DC8CCB /* libz.dylib */; };
+		09FBB10317548B54001CF0EC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FBB10217548B54001CF0EC /* CoreBluetooth.framework */; };
 		09FEC747159808290003678A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FEC746159808290003678A /* MessageUI.framework */; };
 		09FEC765159ACF630003678A /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FEC764159ACF620003678A /* EventKit.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +70,6 @@
 		0927F9821654B62900D6B759 /* status6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status6.png; sourceTree = "<group>"; };
 		0927F9831654B62900D6B759 /* status7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status7.png; sourceTree = "<group>"; };
 		0927F9841654B62900D6B759 /* status8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status8.png; sourceTree = "<group>"; };
-		0927F9931654D48300D6B759 /* SRT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SRT.framework; path = SRTLib/SRT.framework; sourceTree = "<group>"; };
 		0927F99E1654D52C00D6B759 /* LevelDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LevelDB.mm; sourceTree = "<group>"; };
 		0927F99F1654D52C00D6B759 /* libleveldb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libleveldb.a; sourceTree = "<group>"; };
 		0927F9A21654D52C00D6B759 /* RTIndexedDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RTIndexedDB.mm; sourceTree = "<group>"; };
@@ -108,6 +110,10 @@
 		09C5D618162400890017C7B3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		09C5D61C162402B60017C7B3 /* SRT.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SRT.plist; path = SRT_Template/SRT.plist; sourceTree = SOURCE_ROOT; };
 		09C5FF8715E5E68D005B5AC1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		09CF74DD175C340B00FE79B3 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		09F3F99517C7550600DC8CCB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		09F3FB4D17C76A5000DC8CCB /* SRT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SRT.framework; path = SRTLib/SRT.framework; sourceTree = "<group>"; };
+		09FBB10217548B54001CF0EC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		09FEC746159808290003678A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		09FEC764159ACF620003678A /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -117,6 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BCE75817CD9B210024D1EC /* SRT.framework in Frameworks */,
+				09F3F99617C7550600DC8CCB /* libz.dylib in Frameworks */,
+				09CF74E0175C497500FE79B3 /* GameKit.framework in Frameworks */,
 				09C5FF8815E5E68D005B5AC1 /* CoreTelephony.framework in Frameworks */,
 				094337D71588254900D04C00 /* SystemConfiguration.framework in Frameworks */,
 				09FEC765159ACF630003678A /* EventKit.framework in Frameworks */,
@@ -133,7 +142,7 @@
 				094337D51588254900D04C00 /* QuartzCore.framework in Frameworks */,
 				094337D91588254900D04C00 /* MobileCoreServices.framework in Frameworks */,
 				094337DB1588254900D04C00 /* CoreMedia.framework in Frameworks */,
-				0927F9941654D48300D6B759 /* SRT.framework in Frameworks */,
+				09FBB10317548B54001CF0EC /* CoreBluetooth.framework in Frameworks */,
 				0927F9AC1654D52C00D6B759 /* libleveldb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,7 +181,6 @@
 		094337B01588254900D04C00 = {
 			isa = PBXGroup;
 			children = (
-				0927F9931654D48300D6B759 /* SRT.framework */,
 				091ECE1D160C60B700696A9C /* www */,
 				094337DC1588254900D04C00 /* SRT_Template */,
 				094337C11588254900D04C00 /* Frameworks */,
@@ -191,6 +199,9 @@
 		094337C11588254900D04C00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09F3FB4D17C76A5000DC8CCB /* SRT.framework */,
+				09CF74DD175C340B00FE79B3 /* GameKit.framework */,
+				09FBB10217548B54001CF0EC /* CoreBluetooth.framework */,
 				09C5FF8715E5E68D005B5AC1 /* CoreTelephony.framework */,
 				09FEC764159ACF620003678A /* EventKit.framework */,
 				09FEC746159808290003678A /* MessageUI.framework */,
@@ -214,6 +225,7 @@
 		094337DC1588254900D04C00 /* SRT_Template */ = {
 			isa = PBXGroup;
 			children = (
+				09F3FA4F17C7572200DC8CCB /* zipArchive */,
 				0927F9951654D52C00D6B759 /* leveldb */,
 				09874DC715F5981100AFC6D8 /* Resources */,
 				094338111588254900D04C00 /* Plugins */,
@@ -292,6 +304,15 @@
 			path = SRT_Template/en.lproj;
 			sourceTree = SOURCE_ROOT;
 		};
+		09F3FA4F17C7572200DC8CCB /* zipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				09F3F99517C7550600DC8CCB /* libz.dylib */,
+			);
+			name = zipArchive;
+			path = SRT_Template/zipArchive;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +324,7 @@
 				094337B81588254900D04C00 /* Frameworks */,
 				094337B91588254900D04C00 /* Resources */,
 				094337BA1588254900D04C00 /* Sources */,
+				094337BC1588254900D04C00 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -377,6 +399,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		094337BC1588254900D04C00 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "\n\t\t\t\t\t\t\t\tchmod 755 \"$PROJECT_DIR/$PROJECT_NAME/verify.sh\"\n\t\t\t\t\t\t\t\t\"$PROJECT_DIR/$PROJECT_NAME/verify.sh\"\n\t\t\t\t\t";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		094337B71588254900D04C00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -423,13 +462,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-					"$(ARCH_STANDARD_32_BIT)",
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eui-seop Lee (MRBRL7437U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -445,7 +480,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "9B590B0E-ABC2-4E9B-917A-79684823FD22";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv6 armv7 i386";
 			};
@@ -455,13 +489,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					armv7,
-					"$(ARCH_STANDARD_32_BIT)",
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eui-seop Lee (MRBRL7437U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_THUMB_SUPPORT = NO;
@@ -470,7 +500,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PROVISIONING_PROFILE = "9B590B0E-ABC2-4E9B-917A-79684823FD22";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv6 armv7 i386";
@@ -481,10 +510,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eui-seop Lee (MRBRL7437U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eui-seop Lee (MRBRL7437U)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/SRTLib";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/SRTLib",
+					"\"$(SRCROOT)/../SRTLib/build/Release-universal\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SRT_Template/SRT_Template-Prefix.pch";
@@ -509,8 +541,6 @@
 					"-weak-lSystem",
 				);
 				PRODUCT_NAME = SRT_Template;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/SRTLib";
 				WRAPPER_EXTENSION = app;
@@ -521,10 +551,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Eui-seop Lee (MRBRL7437U)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: chisu An (K75AMLP2NQ)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/SRTLib";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/SRTLib",
+					"\"$(SRCROOT)/../SRTLib/build/Release-universal\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SRT_Template/SRT_Template-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -548,7 +582,6 @@
 					"-weak-lSystem",
 				);
 				PRODUCT_NAME = SRT_Template;
-				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/SRTLib";
 				VALIDATE_PRODUCT = YES;

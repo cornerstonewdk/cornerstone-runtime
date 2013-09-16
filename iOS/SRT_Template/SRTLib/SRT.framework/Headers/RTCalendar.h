@@ -52,6 +52,7 @@ enum CalendarError {
 #define kW3CalendarStart        @"start"
 #define kW3CalendarEnd          @"end"
 #define kW3CalendarTransparency @"transparency"
+
 #define kW3CalendarRecurrence   @"recurrence"
 #define kW3CalendarReminder     @"reminder"
 

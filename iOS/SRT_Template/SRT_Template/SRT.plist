@@ -13,9 +13,9 @@
 	<key>SplashImage</key>
 	<string>Splash</string>
 	<key>ShowStatusbarSpinner</key>
-	<true/>
-	<key>ShowScreenSpinner</key>
 	<false/>
+	<key>ShowScreenSpinner</key>
+	<true/>
 	<key>ScreenSpinnerImages</key>
 	<array>
 		<string>status1.png</string>
@@ -29,6 +29,10 @@
 	</array>
 	<key>Plugins</key>
 	<dict>
+		<key>Preferences</key>
+		<string>RTPreference</string>
+		<key>Push</key>
+		<string>RTPush</string>
 		<key>IndexedDB</key>
 		<string>RTIndexedDB</string>
 		<key>Logger</key>
@@ -91,6 +95,8 @@
 		<string>RTAppLauncher</string>
 		<key>PageLoading</key>
 		<string>RTPageLoading</string>
+		<key>Bluetooth</key>
+		<string>RTBluetooth</string>
 	</dict>
 	<key>InstalledApplications</key>
 	<array>

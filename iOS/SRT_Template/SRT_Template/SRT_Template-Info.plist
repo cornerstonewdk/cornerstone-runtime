@@ -22,7 +22,7 @@
 				<string>icon-72@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
@@ -61,7 +61,7 @@
 			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string></string>
+				<string>cornerstone</string>
 			</array>
 		</dict>
 	</array>

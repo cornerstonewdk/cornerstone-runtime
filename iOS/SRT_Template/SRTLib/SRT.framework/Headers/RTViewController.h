@@ -24,6 +24,7 @@
 #import "RTCommandDelegate.h"
 #import "CDVWhitelist.h"
 #import "RTAppLauncher.h"
+#import "SSZipArchive.h"
 
 
 @interface RTViewController : UIViewController<UIWebViewDelegate, RTCommandDelegate> {
@@ -49,15 +50,15 @@
 
 @property (nonatomic, readwrite, copy) NSString* wwwFolderName;
 @property (nonatomic, readwrite, copy) NSString* startPage;
+@property (nonatomic, readwrite, copy) NSString* query;
 
 @property (nonatomic, readwrite, assign) NSTimeInterval startloadingtime;
 @property (nonatomic, readwrite, assign) NSTimeInterval endloadingtime;
 
-
-
 + (NSDictionary*) getBundlePlist:(NSString*)plistName;
 + (NSString*) cordovaVersion;
 + (NSString*) applicationDocumentsDirectory;
++ (NSString*) getDeviceToken;
 
 - (void) printMultitaskingInfo;
 - (void) createGapView;
@@ -71,5 +72,9 @@
 - (NSDictionary*) deviceProperties;
 
 - (NSArray*) parseInterfaceOrientations:(NSArray*)orientations;
+
+//[20130823][chisu]for hydration
+- (void) getDocFolder;
+- (void) unzip;
 
 @end

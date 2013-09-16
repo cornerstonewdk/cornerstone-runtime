@@ -11,7 +11,6 @@
 
 @implementation RTPageLoading
 
-
 -(void) getStartPageLoadingTime:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options {
     NSString* callbackId = [arguments objectAtIndex:0];
     
