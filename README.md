@@ -17,7 +17,10 @@
 -	Java Script layer는 웹앱에서 사용하기 위한 JavaScript API들을 선언 및 정의 하며 이를 Runtime의 native layer와 연결하는 역할을 한다.
 
 -	**SRT-x.x.js** 형태로 배포 되며 Runtime이 업데이트 될때마다 버전명이 올라간다. 
-		> **2012.12.28** 기준 **SRT-0.9.js** 배포 
+
+	 **2013.10.16** 기준 **SRT-0.9.3js** 배포 -> Android
+
+	 **2013.10.16** 기준 **SRT-0.9.2js** 배포 -> iOS
 
 -	**SRT-x.x.js** 는 크게 두가지 역할로 구분된다. 
 
