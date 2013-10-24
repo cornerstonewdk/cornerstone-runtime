@@ -9,7 +9,7 @@
 2) asset - 실제 웹앱의 웹 리소스(HTML/CSS/JS/IMG) 와 Runtime JavaScript Library 가 저장되는 위치 
 	
 -	**assets/www** : 웹앱의 저장 위치 
--	**assets/www/index.html** : 웹앱의 첫 실행 파일 
+-	**assets/www/index.html** : 웹앱의 첫 실행 파일 (RuntimeStandAlone.java 에서 변경가능) 
 
 3) libs - Webview 를 이용하여 Device 의 단말 접근 기능을 제공하는 DeviceAPI가 포팅된 Android library 위치 
 
