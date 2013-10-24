@@ -66,8 +66,14 @@ public class RuntimeStandAlone extends RuntimeActivity {
 		//STEP 2-1 : Hydration Check;
         //[20130823][chisu]set hydration build
         boolean usehydration = useHydrationBuild();
-        if(usehydration)
-        	openPage = BASE_URL + "softpackaging.html";
+        if(usehydration){
+        	UriData data = (UriData)getIntent().getSerializableExtra(UriReceiver.FLAG_DATA);
+        	if(data == null)
+        		openPage = BASE_URL + "softpackaging.html";
+        	//소프트패키징을 사용하는 앱에서 push가 왔을 경우 
+        	else if(data.page != null)
+        		openPage = "file:///data/data/" + getPackageName() + "/hydapp/" + data.page;
+        }
         
         
 		//STEP 3 : load url
