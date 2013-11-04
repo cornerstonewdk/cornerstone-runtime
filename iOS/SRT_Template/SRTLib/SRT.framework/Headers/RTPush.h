@@ -12,5 +12,6 @@
     
 }
 -(void) getRegistrationID:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+-(void) getCurrentURL:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 
 @end

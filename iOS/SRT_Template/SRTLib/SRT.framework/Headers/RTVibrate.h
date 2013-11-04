@@ -18,6 +18,7 @@
  */
 
 #import "RTPlugin.h"
+#import "SSZipArchive.h"
 #import <AudioToolbox/AudioServices.h>
 
 @interface RTVibrate : RTPlugin
@@ -28,11 +29,20 @@
 
 @property (nonatomic, retain) NSString* callbackId;
 
+//[20130823][chisu]for hydration
+@property (nonatomic, retain) NSURLConnection *theConnection;
+@property (nonatomic, retain) NSMutableData *DownLoad_Data;
+@property (nonatomic) long Total_FileSize;
+
 - (RTVibrate*) init;
 - (void)vibrate:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void)vibratepattern:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void)startBeep:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void)stopBeep:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)hydrationupdate:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+
+- (void) unzip;
+- (void) downloadzip;
 
 @end
 

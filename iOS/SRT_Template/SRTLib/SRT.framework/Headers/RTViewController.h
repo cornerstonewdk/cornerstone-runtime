@@ -28,7 +28,7 @@
 
 
 @interface RTViewController : UIViewController<UIWebViewDelegate, RTCommandDelegate> {
-	
+    
 }
 
 @property (nonatomic, retain) IBOutlet RTWebView* webView;
@@ -51,9 +51,12 @@
 @property (nonatomic, readwrite, copy) NSString* wwwFolderName;
 @property (nonatomic, readwrite, copy) NSString* startPage;
 @property (nonatomic, readwrite, copy) NSString* query;
+@property (nonatomic, readwrite, assign) BOOL pushfromsp;
+@property (nonatomic, readwrite, copy) NSString* currentURL;
 
 @property (nonatomic, readwrite, assign) NSTimeInterval startloadingtime;
 @property (nonatomic, readwrite, assign) NSTimeInterval endloadingtime;
+
 
 + (NSDictionary*) getBundlePlist:(NSString*)plistName;
 + (NSString*) cordovaVersion;
@@ -74,7 +77,16 @@
 - (NSArray*) parseInterfaceOrientations:(NSArray*)orientations;
 
 //[20130823][chisu]for hydration
+@property (nonatomic, retain) NSURLConnection *theConnection;
+@property (nonatomic, retain) NSMutableData *DownLoad_Data;
+@property (nonatomic) long Total_FileSize;
+
+@property (nonatomic, readonly, retain) NSDictionary* softpackagingPlist;
+
+- (BOOL) useSoftpackaging;
 - (void) getDocFolder;
 - (void) unzip;
+- (void) downloadzip;
+- (NSString*) getCurrentURL;
 
 @end
