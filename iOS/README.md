@@ -23,4 +23,7 @@
 -	**SRT_Template-Info.plist** : iOS 앱을 위한 설정 파일
 -	**SRT.plist** : Cornerstone Runtime을 위한 설정 파일
 
+5) iOS Runtime을 이용하여 웹앱을 개발하는 상세한 방법은 다음 링크의 문서를 참조한다. 
+
+	- http://cornerstone.sktelecom.com/2/livedoc/#6300
 <br>
