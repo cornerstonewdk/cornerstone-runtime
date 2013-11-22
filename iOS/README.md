@@ -10,6 +10,10 @@
 
 -	**www** : 웹앱의 저장 위치 
 -	**www/index.html** : 웹앱의 첫 실행 파일
+
+		- Corenrstone Runtime은 웹 리소스이름의 대소문자를 구분한다.
+		- index.html 파일의 경우 파일 이름을 전부 소문자로 하지 않으면 파일을 찾을 수 없다는 에러를 발생시키니 유의한다.
+
 -	**www/SRT-1.0.js** : Cornerstone Runtime JavaScript Library
 
 3) SRT_Template/Resources - 어플에 필요한 리소스를 저장하는 위치

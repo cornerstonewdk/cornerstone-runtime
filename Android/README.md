@@ -15,6 +15,9 @@
 
 -	**assets/www/index.html** : 웹앱의 첫 실행 파일 (RuntimeStandAlone.java 에서 변경가능) 
 
+		- Corenrstone Runtime은 웹 리소스이름의 대소문자를 구분한다.
+		- index.html 파일의 경우 파일 이름을 전부 소문자로 하지 않으면 파일을 찾을 수 없다는 에러를 발생시키니 유의한다. 
+
 3) libs - Webview 를 이용하여 Device 의 단말 접근 기능을 제공하는 DeviceAPI가 포팅된 Android library 위치 
 
 -	**Runtime.jar** : webview 및 DeviceAPI가 포팅된 JAVA library
